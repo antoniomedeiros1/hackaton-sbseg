@@ -2,3 +2,4 @@
 *.pdf
 
 !*-dashboard.json
+!Interface.pdf
