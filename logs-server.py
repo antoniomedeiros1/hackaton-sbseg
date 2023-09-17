@@ -58,6 +58,20 @@ def categories():
         
     return jsonify(categories)
 
+@app.route('/severity')
+def severities():
+    global logs
+    
+    severities = {}
+
+    for key in logs:
+        index = logs[key]['alert']['severity']
+        if index not in severities.keys():
+            severities[index] = 1
+        else: 
+            severities[index] = severities[index] + 1
+        
+    return jsonify(severities)
 
 @app.route('/')
 def home():
